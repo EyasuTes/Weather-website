@@ -1,0 +1,130 @@
+body{
+    background: url('./background.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+h1{
+    border-bottom: 2px solid white;
+    font-size: 50px;
+}
+.container{
+    display: flex;
+    
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    transition: top 1s ease;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 20%;
+}
+.disap{
+    display: block;
+}
+.enter{
+    font-size:5vw;
+    color: white;
+    font-weight: 800;
+}input{
+    font-size: 4vw;
+    border-radius: 8px;
+}
+.searchButton{
+    transition: font-size 1s ease;
+    
+    font-size: 3vw;
+    border: 2px solid skyblue;
+    width: 50%;
+    border-radius: 10px;
+}
+input, .searchButton {
+    opacity: 0; 
+  }
+  
+  
+  @keyframes glideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  @keyframes glideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+ 
+  input {
+    animation: glideInFromRight 1s ease forwards 0.5s;
+  }
+  
+  .searchButton {
+    animation: glideInFromLeft 1s ease forwards 0.9s;
+  }
+
+  .output{
+    
+    position: absolute;
+    top: 50%;
+    transition: top 1s ease;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 20%;
+    
+  }
+
+.dataHeading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cell{
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid skyblue;
+}
+.cells{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+@keyframes glideFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Apply the animation to the element */
+  .data.glide-from-right {
+    animation: glideFromRight 1s ease-out;
+  }
+  .data{
+    background-color: white;
+  }
