@@ -1,6 +1,6 @@
 import './style.css';
 import { displayWeather } from './locationWeather';
-
+import { imageDisplay } from './images';
 function displayPic(keyword){
   return fetch(`https://api.weatherapi.com/v1/forecast.json?key=6084e2b288204bdd8d175635233007&q=${keyword}&days=3`, {mode: 'cors'})
     .then(function(response) {
@@ -24,22 +24,25 @@ const disap=document.querySelector('.disap')
 const searchButton=document.querySelector('.searchButton')
 const output =document.querySelector('.output')
 const dataContainer = document.querySelector('.data');
+const imagedis =document.querySelector('.preview')
 
 form.addEventListener('submit', function(event){
     event.preventDefault();
     
         if(disap.style.display!=='none'){
             disap.style.display='none'
-            output.style.display='block'
+            output.style.display='flex'
             moveButton()
             displayPic(input.value)
-            
             dataContainer.classList.add('glide-from-right');
+            imageDisplay(input.value)
+            imagedis.style.display='block'
             
         }else{
             
             disap.style.display='block'
             output.style.display='none'
+            imagedis.style.display='none'
             returnButton()
         }
     
